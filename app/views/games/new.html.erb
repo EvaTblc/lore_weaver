@@ -1,0 +1,11 @@
+<p>Game / New</p>
+
+<%= form_with model: @game do |f|%>
+<%= hidden_field_tag :scenario_id, params[:scenario_id] %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :character_name %>
+  <%= f.text_field :character_name %>
+  <%= f.submit %>
+<% end %>

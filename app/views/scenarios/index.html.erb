@@ -1,0 +1,30 @@
+<div class="scenarios-container">
+  <div class="scenarios-header">
+    <h1>Scénarios Disponibles</h1>
+  </div>
+
+  <% if @scenarios.any? %>
+    <div class="scenarios-grid">
+      <% @scenarios.each_with_index do |scenario, index| %>
+        <div class="scenario-card" data-controller="scenario-card">
+          <div class="scenario-label" data-action="click->scenario-card#toggle">
+            <h2 class="scenario-name"><%= scenario.name %></h2>
+            <p class="scenario-hint" data-scenario-card-target="hint">Cliquez pour voir la description</p>
+            <span class="scenario-icon" data-scenario-card-target="icon">▶</span>
+          </div>
+          <div class="scenario-description" data-scenario-card-target="description">
+            <div class="scenario-description-content">
+              <%= scenario.description %>
+            </div>
+            <%= link_to "Commencer l'aventure", new_game_path(scenario_id: scenario.id), class: "scenario-button" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="empty-state">
+      <div class="empty-state-icon"></div>
+      <p class="empty-state-text">Aucun scénario disponible pour le moment.</p>
+    </div>
+  <% end %>
+</div>

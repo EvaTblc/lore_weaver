@@ -1,0 +1,13 @@
+<h2><%= @game.name %></h2>
+
+<h4>Ton personnage</h4>
+<p><%= @game.character_name %></p>
+
+<% @game.messages.each do |message| %>
+  <p><%= message.content %></p>
+<% end %>
+
+<%= form_with model: [@game, @message] do |f| %>
+  <%= f.text_field :content %>
+  <%= f.submit %>
+<% end %>
