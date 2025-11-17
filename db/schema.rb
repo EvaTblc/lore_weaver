@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_11_17_120014) do
+ActiveRecord::Schema[7.2].define(version: 2025_11_17_131815) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,22 +20,22 @@ ActiveRecord::Schema[7.2].define(version: 2025_11_17_120014) do
     t.string "character_name"
     t.jsonb "game_state"
     t.text "story_summary"
-    t.bigint "users_id", null: false
-    t.bigint "scenarios_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["scenarios_id"], name: "index_games_on_scenarios_id"
-    t.index ["users_id"], name: "index_games_on_users_id"
+    t.bigint "user_id"
+    t.bigint "scenario_id"
+    t.index ["scenario_id"], name: "index_games_on_scenario_id"
+    t.index ["user_id"], name: "index_games_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
     t.string "role"
     t.text "content"
     t.integer "token_count"
-    t.bigint "games_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["games_id"], name: "index_messages_on_games_id"
+    t.bigint "game_id"
+    t.index ["game_id"], name: "index_messages_on_game_id"
   end
 
   create_table "scenarios", force: :cascade do |t|
@@ -60,7 +60,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_11_17_120014) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "games", "scenarios", column: "scenarios_id"
-  add_foreign_key "games", "users", column: "users_id"
-  add_foreign_key "messages", "games", column: "games_id"
+  add_foreign_key "games", "scenarios"
+  add_foreign_key "games", "users"
+  add_foreign_key "messages", "games"
 end
