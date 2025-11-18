@@ -1,0 +1,24 @@
+<div class="container">
+
+  <div class="infos_user">
+    <p><%= current_user.username %></p>
+    <p><%= current_user.email %></p>
+  </div>
+
+  <div class="games_user">
+    <p><%= @active_games.count %> Actives</p>
+    <p><%= @done_games.count %> Terminées</p>
+    <p><%= @abandoned_games.count %> Abandonnées</p>
+
+    <% @active_games.each do |game| %>
+      <p><%= link_to game.name, game_path(game) %></p>
+      <p><%= distance_of_time_in_words(0, game.total_play_time, include_seconds: true) %></p>
+      <p><%= game.counter_messages_ai %> messages du maître de jeu</p>
+      <p><%= game.counter_messages_user %> messages du joueur</p>
+    <% end %>
+  </div>
+
+  <div class="new_game">
+    <%= link_to "Nouvelle aventure", scenarios_path %>
+  </div>
+</div>

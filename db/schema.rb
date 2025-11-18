@@ -10,14 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_11_17_131815) do
+ActiveRecord::Schema[7.2].define(version: 2025_11_18_124457) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "characters", force: :cascade do |t|
+    t.bigint "game_id", null: false
+    t.bigint "scenario_id", null: false
+    t.string "name"
+    t.string "character_class"
+    t.jsonb "skills"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "lever", default: 1
+    t.integer "experience", default: 0
+    t.index ["game_id"], name: "index_characters_on_game_id"
+    t.index ["scenario_id"], name: "index_characters_on_scenario_id"
+  end
 
   create_table "games", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "status"
-    t.string "character_name"
     t.jsonb "game_state"
     t.text "story_summary"
     t.datetime "created_at", null: false
@@ -45,6 +58,8 @@ ActiveRecord::Schema[7.2].define(version: 2025_11_17_131815) do
     t.boolean "active", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.jsonb "initial_game_state"
+    t.jsonb "available_classes"
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,6 +75,8 @@ ActiveRecord::Schema[7.2].define(version: 2025_11_17_131815) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "characters", "games"
+  add_foreign_key "characters", "scenarios"
   add_foreign_key "games", "scenarios"
   add_foreign_key "games", "users"
   add_foreign_key "messages", "games"
