@@ -1,2 +1,15 @@
-<h1>Characters#new</h1>
-<p>Find me in app/views/characters/new.html.erb</p>
+<h2>Créer ton personnage</h2>
+
+<div class="form_container">
+  <%= form_with model: @character, url: scenario_characters_path(@scenario) do |f| %>
+    <%= label_tag :game_name, "Nom de votre aventure" %>
+    <%= text_field_tag :game_name, nil, placeholder: "Ex: La quête du dragon rouge" %>
+    <%= f.label :name, "Comment vous appelez-vous ?" %>
+    <%= f.text_field :name %>
+    <%= f.label :character_class, "Choisissez votre classe" %>
+    <%= f.select :character_class, options_for_select(@scenario.available_classes.keys) %>
+    <%= f.hidden_field :scenario_id, value: @scenario.id %>
+    <%= f.label :name %>
+    <%= f.submit "Partir à l'aventure" %>
+  <% end %>
+</div>

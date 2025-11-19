@@ -6,11 +6,14 @@ class MessagesController < ApplicationController
     @user_message.role = "user"
     @user_message.save!
     ai_response = AiService.new(game: @game, user_message: @user_message.content).call
+
     @assistant_message = @game.messages.create!(
       role: "assistant",
-      content: ai_response[:narration]
+      content: ai_response["narration"]
     )
+
     @game.apply_changes(ai_response["changes"]) if ai_response["changes"]
+
     redirect_to game_path(@game)
   end
 

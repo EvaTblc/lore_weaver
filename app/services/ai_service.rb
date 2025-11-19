@@ -6,13 +6,30 @@ class AiService
 
   def call
     client = OpenAI::Client.new
+
+    messages = build_messages
+    puts "Messages envoyés à l'API:"
+    puts JSON.pretty_generate(messages)
+
     response = client.chat(
       parameters: {
         model: "gpt-3.5-turbo",
         messages: build_messages
       }
     )
-    JSON.parse(response.dig("choices", 0, "message", "content"))
+
+    content = response.dig("choices", 0, "message", "content")
+    begin
+    JSON.parse(content)
+    rescue JSON::ParserError => e
+      puts "Erreur de parsing JSON: #{e.message}"
+      puts "Contenu reçu: #{content}"
+      # Retourner un format par défaut
+      {
+        "narration" => content,
+        "changes" => {}
+      }
+    end
   end
 
   private
@@ -26,7 +43,7 @@ class AiService
       end
       messages << { role: "user", content: @user_message }
     else
-      messages << { role: "user", content: "Commence l'aventure pour le personnage qui s'appelle #{@game.character_name}"}
+      messages << { role: "user", content: "Commence l'aventure pour le personnage qui s'appelle #{@game.character.name}"}
     end
     messages
   end

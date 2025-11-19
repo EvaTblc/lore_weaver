@@ -1,0 +1,40 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="#2c3e50"/>
+  
+  <!-- Open book -->
+  <g transform="translate(100, 100)">
+    <!-- Left page -->
+    <path d="M -50 -35 L -50 35 Q -45 40, -5 40 L -5 -30 Q -45 -30, -50 -35 Z" 
+          fill="#ecf0f1" stroke="#95a5a6" stroke-width="2"/>
+    
+    <!-- Right page -->
+    <path d="M 50 -35 L 50 35 Q 45 40, 5 40 L 5 -30 Q 45 -30, 50 -35 Z" 
+          fill="#ecf0f1" stroke="#95a5a6" stroke-width="2"/>
+    
+    <!-- Center binding shadow -->
+    <rect x="-2" y="-30" width="4" height="70" fill="#bdc3c7"/>
+    
+    <!-- Simple text lines on left page -->
+    <line x1="-40" y1="-15" x2="-15" y2="-15" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="-40" y1="-5" x2="-15" y2="-5" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="-40" y1="5" x2="-15" y2="5" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="-40" y1="15" x2="-20" y2="15" stroke="#7f8c8d" stroke-width="2"/>
+    
+    <!-- Simple text lines on right page -->
+    <line x1="15" y1="-15" x2="40" y2="-15" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="15" y1="-5" x2="40" y2="-5" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="15" y1="5" x2="40" y2="5" stroke="#7f8c8d" stroke-width="2"/>
+    <line x1="15" y1="15" x2="35" y2="15" stroke="#7f8c8d" stroke-width="2"/>
+    
+    <!-- Quill pen -->
+    <g transform="translate(45, -25) rotate(30)">
+      <!-- Feather -->
+      <ellipse cx="0" cy="-15" rx="4" ry="20" fill="#8e44ad"/>
+      <!-- Shaft -->
+      <line x1="0" y1="5" x2="0" y2="15" stroke="#5b2c6f" stroke-width="2"/>
+      <!-- Nib -->
+      <path d="M -1 15 L 0 20 L 1 15 Z" fill="#34495e"/>
+    </g>
+  </g>
+</svg>

@@ -1,5 +1,5 @@
 class Character < ApplicationRecord
-  belongs_to :game
+  belongs_to :game, optional: true
   belongs_to :scenario
 
   validates :name, presence: true, length: { minimum: 3, maximum: 50 }
@@ -14,7 +14,7 @@ class Character < ApplicationRecord
     if experience >= xp_next_level
       self.level += 1
       self.experience -= xp_next_level
-      skills.each do |key; value|
+      skills.each do |key, value|
         skills[key] = value + 1
       end
       save!

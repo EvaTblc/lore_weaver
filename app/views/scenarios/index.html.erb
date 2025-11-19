@@ -16,7 +16,7 @@
             <div class="scenario-description-content">
               <%= scenario.description %>
             </div>
-            <%= link_to "Commencer l'aventure", new_game_path(scenario_id: scenario.id), class: "scenario-button" %>
+            <%= link_to "Commencer l'aventure", new_scenario_character_path(scenario), class: "scenario-button" %>
           </div>
         </div>
       <% end %>
