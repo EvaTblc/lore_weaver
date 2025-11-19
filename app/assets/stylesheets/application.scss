@@ -1,5 +1,21 @@
 @import "bootstrap";
+@import "font-awesome";
+@import "colors";
 
 @import "avatar";
 @import "navbar";
 @import "scenario_cards";
+@import "h1_effect";
+@import "homepage";
+
+body {
+  background-color: $dark-grey;
+}
+
+p {
+  color: $beige;
+}
+
+a {
+  text-decoration: none;
+}

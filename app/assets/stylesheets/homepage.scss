@@ -1,0 +1,60 @@
+.appCont {
+  height: 100%;
+  background: #222831;
+}
+
+.infosGamesUser {
+  display: flex;
+}
+
+.cardsGames {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.card-category {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  .badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 0px 20px 5px rgba(188, 162, 162, 0.105);
+  }
+
+  h5 {
+    color: white;
+    font-size: 18px;
+    margin: 2rem;
+  }
+  p {
+    font-size: 15px;
+  }
+  .infosGame {
+    display: flex;
+    font-size: 15px;
+    p {
+      margin-left: 1em;
+    }
+  }
+}

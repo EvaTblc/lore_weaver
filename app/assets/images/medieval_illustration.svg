@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2c1810;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4a2c1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a0f08;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="moonGlow" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#ffe4b3;stop-opacity:0.8" />
+      <stop offset="30%" style="stop-color:#ffd97d;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#ffd97d;stop-opacity:0" />
+    </radialGradient>
+    
+    <radialGradient id="torchLight" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#ff8c00;stop-opacity:0.6" />
+      <stop offset="50%" style="stop-color:#ff6600;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#ff6600;stop-opacity:0" />
+    </radialGradient>
+    
+    <linearGradient id="groundGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a3a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d1f0d;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="mist" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#d0d0d0;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#d0d0d0;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="1200" height="800" fill="url(#skyGradient)"/>
+  
+  <!-- Stars -->
+  <circle cx="150" cy="80" r="1.5" fill="#ffffff" opacity="0.8"/>
+  <circle cx="280" cy="120" r="1" fill="#ffffff" opacity="0.6"/>
+  <circle cx="450" cy="90" r="1.5" fill="#ffffff" opacity="0.9"/>
+  <circle cx="620" cy="150" r="1" fill="#ffffff" opacity="0.7"/>
+  <circle cx="780" cy="100" r="2" fill="#ffffff" opacity="0.8"/>
+  <circle cx="920" cy="130" r="1" fill="#ffffff" opacity="0.6"/>
+  <circle cx="1050" cy="85" r="1.5" fill="#ffffff" opacity="0.9"/>
+  <circle cx="200" cy="180" r="1" fill="#ffffff" opacity="0.7"/>
+  <circle cx="850" cy="70" r="1.5" fill="#ffffff" opacity="0.8"/>
+  <circle cx="1100" cy="160" r="1" fill="#ffffff" opacity="0.6"/>
+  
+  <!-- Moon -->
+  <circle cx="950" cy="150" r="60" fill="#ffe4b3"/>
+  <circle cx="950" cy="150" r="80" fill="url(#moonGlow)"/>
+  
+  <!-- Distant mountains -->
+  <polygon points="0,400 200,250 400,350 600,280 800,330 1000,260 1200,350 1200,400" fill="#1a1a2e" opacity="0.6"/>
+  
+  <!-- Castle silhouette -->
+  <g opacity="0.9">
+    <!-- Main castle body -->
+    <rect x="400" y="280" width="400" height="220" fill="#0d0d0d"/>
+    
+    <!-- Towers -->
+    <rect x="370" y="200" width="80" height="300" fill="#0d0d0d"/>
+    <rect x="750" y="200" width="80" height="300" fill="#0d0d0d"/>
+    <rect x="550" y="150" width="100" height="350" fill="#0d0d0d"/>
+    
+    <!-- Tower tops (crenellations) -->
+    <rect x="370" y="200" width="15" height="30" fill="#0d0d0d"/>
+    <rect x="400" y="200" width="15" height="30" fill="#0d0d0d"/>
+    <rect x="430" y="200" width="15" height="30" fill="#0d0d0d"/>
+    
+    <rect x="750" y="200" width="15" height="30" fill="#0d0d0d"/>
+    <rect x="780" y="200" width="15" height="30" fill="#0d0d0d"/>
+    <rect x="810" y="200" width="15" height="30" fill="#0d0d0d"/>
+    
+    <rect x="550" y="150" width="20" height="30" fill="#0d0d0d"/>
+    <rect x="585" y="150" width="20" height="30" fill="#0d0d0d"/>
+    <rect x="620" y="150" width="20" height="30" fill="#0d0d0d"/>
+    
+    <!-- Wall crenellations -->
+    <rect x="400" y="280" width="20" height="25" fill="#0d0d0d"/>
+    <rect x="440" y="280" width="20" height="25" fill="#0d0d0d"/>
+    <rect x="480" y="280" width="20" height="25" fill="#0d0d0d"/>
+    <rect x="700" y="280" width="20" height="25" fill="#0d0d0d"/>
+    <rect x="740" y="280" width="20" height="25" fill="#0d0d0d"/>
+    <rect x="780" y="280" width="20" height="25" fill="#0d0d0d"/>
+    
+    <!-- Windows with torch light -->
+    <rect x="580" y="250" width="25" height="35" fill="#ff8c00" opacity="0.8"/>
+    <rect x="580" y="250" width="25" height="35" fill="url(#torchLight)"/>
+    
+    <rect x="390" y="350" width="20" height="30" fill="#ff6600" opacity="0.6"/>
+    <rect x="770" y="370" width="20" height="30" fill="#ff6600" opacity="0.5"/>
+  </g>
+  
+  <!-- Ground/Forest -->
+  <ellipse cx="600" cy="700" rx="700" ry="150" fill="url(#groundGradient)"/>
+  <rect x="0" y="500" width="1200" height="300" fill="url(#groundGradient)"/>
+  
+  <!-- Trees in foreground -->
+  <g opacity="0.7">
+    <!-- Tree 1 -->
+    <rect x="100" y="400" width="30" height="300" fill="#0a0a0a"/>
+    <ellipse cx="115" cy="380" rx="60" ry="80" fill="#1a1a1a"/>
+    <ellipse cx="100" cy="350" rx="50" ry="70" fill="#1a1a1a"/>
+    <ellipse cx="130" cy="360" rx="45" ry="65" fill="#1a1a1a"/>
+    
+    <!-- Tree 2 -->
+    <rect x="1050" y="420" width="35" height="280" fill="#0a0a0a"/>
+    <ellipse cx="1067" cy="400" rx="70" ry="90" fill="#1a1a1a"/>
+    <ellipse cx="1050" cy="370" rx="60" ry="80" fill="#1a1a1a"/>
+    <ellipse cx="1085" cy="380" rx="55" ry="75" fill="#1a1a1a"/>
+    
+    <!-- Tree 3 -->
+    <rect x="250" y="450" width="25" height="250" fill="#0a0a0a"/>
+    <ellipse cx="262" cy="430" rx="50" ry="70" fill="#1a1a1a"/>
+    <ellipse cx="250" cy="410" rx="45" ry="60" fill="#1a1a1a"/>
+    
+    <!-- Tree 4 -->
+    <rect x="920" y="460" width="28" height="240" fill="#0a0a0a"/>
+    <ellipse cx="934" cy="445" rx="55" ry="75" fill="#1a1a1a"/>
+    <ellipse cx="920" cy="420" rx="50" ry="65" fill="#1a1a1a"/>
+  </g>
+  
+  <!-- Mist layers -->
+  <ellipse cx="300" cy="550" rx="350" ry="100" fill="url(#mist)"/>
+  <ellipse cx="800" cy="580" rx="400" ry="120" fill="url(#mist)"/>
+  
+  <!-- Knight silhouette on horseback -->
+  <g transform="translate(600, 580)">
+    <!-- Shadow -->
+    <ellipse cx="0" cy="80" rx="120" ry="25" fill="#000000" opacity="0.4"/>
+    
+    <!-- Horse body -->
+    <ellipse cx="0" cy="20" rx="90" ry="50" fill="#000000"/>
+    
+    <!-- Horse neck -->
+    <path d="M 60,0 L 80,-30 L 85,-20 L 65,10 Z" fill="#000000"/>
+    
+    <!-- Horse head -->
+    <ellipse cx="85" cy="-35" rx="15" ry="20" fill="#000000"/>
+    
+    <!-- Horse legs -->
+    <rect x="-50" y="40" width="12" height="60" fill="#000000"/>
+    <rect x="-20" y="45" width="12" height="55" fill="#000000"/>
+    <rect x="20" y="42" width="12" height="58" fill="#000000"/>
+    <rect x="50" y="47" width="12" height="53" fill="#000000"/>
+    
+    <!-- Knight body -->
+    <rect x="-25" y="-40" width="50" height="70" fill="#0a0a0a"/>
+    
+    <!-- Knight head with helmet -->
+    <rect x="-20" y="-70" width="40" height="35" fill="#0a0a0a"/>
+    
+    <!-- Helmet plume -->
+    <path d="M 0,-70 L -5,-95 L 0,-90 L 5,-95 Z" fill="#8b0000"/>
+    
+    <!-- Shield -->
+    <path d="M -45,-20 L -45,20 L -30,35 L -15,20 L -15,-20 Z" fill="#1a1a1a"/>
+    
+    <!-- Lance -->
+    <line x1="30" y1="-30" x2="120" y2="-80" stroke="#2a2a2a" stroke-width="4"/>
+    <polygon points="120,-80 130,-82 128,-78" fill="#4a4a4a"/>
+    
+    <!-- Cape -->
+    <path d="M -20,-35 L -50,20 L -40,30 L -20,10 Z" fill="#1a0000" opacity="0.8"/>
+  </g>
+  
+  <!-- Torch on post in foreground -->
+  <rect x="150" y="480" width="15" height="220" fill="#2a1810"/>
+  
+  <!-- Torch flame -->
+  <ellipse cx="157" cy="460" rx="25" ry="35" fill="#ff6600"/>
+  <ellipse cx="157" cy="455" rx="20" ry="28" fill="#ff8c00"/>
+  <ellipse cx="157" cy="450" rx="15" ry="22" fill="#ffaa33"/>
+  <circle cx="157" cy="460" r="50" fill="url(#torchLight)"/>
+  
+  <!-- Flying bats -->
+  <g opacity="0.6">
+    <path d="M 700,200 L 690,205 L 695,210 L 700,205 L 705,210 L 710,205 Z" fill="#000000"/>
+    <path d="M 850,180 L 840,185 L 845,190 L 850,185 L 855,190 L 860,185 Z" fill="#000000"/>
+    <path d="M 500,220 L 490,225 L 495,230 L 500,225 L 505,230 L 510,225 Z" fill="#000000"/>
+  </g>
+  
+  <!-- Atmospheric particles -->
+  <g opacity="0.3">
+    <circle cx="300" cy="350" r="2" fill="#ffffff"/>
+    <circle cx="450" cy="420" r="1.5" fill="#ffffff"/>
+    <circle cx="650" cy="380" r="2" fill="#ffffff"/>
+    <circle cx="800" cy="440" r="1.5" fill="#ffffff"/>
+    <circle cx="950" cy="390" r="2" fill="#ffffff"/>
+  </g>
+</svg>

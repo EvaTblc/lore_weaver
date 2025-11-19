@@ -40,6 +40,7 @@ gem 'dotenv-rails'
 gem 'rails-i18n'
 gem "sassc-rails"
 gem "bootstrap", "~> 5.3"
+gem "font-awesome-sass", "~> 6.1"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

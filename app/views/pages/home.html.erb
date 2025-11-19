@@ -1,4 +1,10 @@
-<div class="container">
+  <div class="titleCont">
+      <h1 class="main-title" id="main-title">
+          Lore <br><span style="padding-left:100px">Weaver</span><br><span style="padding-right:110px">Tisseur</span><br><span style="padding-left:-20px">d'Aventures</span>
+      </h1>
+  </div>
+
+<div class="appCont">
 
   <div class="infos_user">
     <p><%= current_user.username %></p>
@@ -6,17 +12,44 @@
   </div>
 
   <div class="games_user">
-    <p><%= @active_games.count %> Actives</p>
-    <p><%= @done_games.count %> Terminées</p>
-    <p><%= @abandoned_games.count %> Abandonnées</p>
+    <div class="infosGamesUser">
+      <p><%= @active_games.count %> Actives </p>
+      <p><%= @done_games.count %> Terminées </p>
+      <p><%= @abandoned_games.count %> Abandonnées </p>
+    </div>
 
-    <% @active_games.each do |game| %>
-      <p><%= link_to game.name, game_path(game) %></p>
-      <p><%= distance_of_time_in_words(0, game.total_play_time, include_seconds: true) %></p>
-      <p><%= game.counter_messages_ai %> messages du maître de jeu</p>
-      <p><%= game.counter_messages_user %> messages du joueur</p>
-    <% end %>
+    <div class="cardsGames">
+      <% @active_games.each do |game| %>
+        <%= link_to game_path(game) do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path(case game.scenario.category
+          when "Medieval" then "medieval_illustration.svg"
+          when "Thriller" then "thriller_illustration.svg"
+          when "SF" then "scifi_illustration.svg"
+          end )%>)">
+          <% if game.active? %>
+            <i class="fa-notdog fa-solid fa-circle badge" style="color: #0c8561ff;"></i>
+
+          <% elsif game.abandoned? %>
+            <i class="fa-notdog fa-solid fa-circle badge" style="color: #831111ff;"></i>
+
+          <% else %>
+            <i class="fa-notdog fa-solid fa-circle badge" style="color: #787878;"></i>
+          <% end %>
+            <h5><%= game.name.upcase %></h5>
+            <p>🎭<%= game.scenario.category %></p>
+            <p>⏲️<%= distance_of_time_in_words(0, game.total_play_time, include_seconds: true) %></p>
+            <div class="infosGame">
+              <p>💬 <%= game.counter_messages_ai + game.counter_messages_user%></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+
+    </div>
   </div>
+
+
+
 
   <div class="new_game">
     <%= link_to "Nouvelle aventure", scenarios_path %>

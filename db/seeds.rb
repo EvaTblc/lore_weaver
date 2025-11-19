@@ -19,6 +19,7 @@ puts "📚 Création des scénarios..."
 
 scenario1 = Scenario.create!(
   name: "La Quête du Dragon",
+  category: "Medieval",
   description: "Incarnez un(e) aventurier(ère) dans un royaume médiéval menacé par un dragon ancestral. Explorez des donjons, affrontez des créatures fantastiques et forgez votre légende.",
   prompt: "Tu es le maître du jeu pour une aventure médiévale fantasy. Le joueur incarne un aventurier courageux. Crée une histoire immersive avec des choix significatifs, des combats (utilise des jets de dés simples : 1-10 pour l'action), des énigmes et des rencontres avec des PNJ mémorables. Le ton est épique et les descriptions sont riches. Le dragon final doit être un défi majeur. Adapte la difficulté selon les actions du joueur.
     IMPORTANT : Tu DOIS répondre UNIQUEMENT avec un objet JSON valide, sans texte avant ou après. Format obligatoire :
@@ -86,6 +87,7 @@ scenario1 = Scenario.create!(
 
 scenario2 = Scenario.create!(
   name: "Meurtre à Londres",
+  category: "Thriller",
   description: "1895, Londres. Un meurtre mystérieux secoue la haute société britannique. En tant que détective privé renommé, vous devez démêler les fils d'une intrigue complexe où rien n'est ce qu'il semble être.",
   prompt: "Tu es le maître du jeu pour une enquête policière victorienne. Le joueur est un détective privé expérimenté. Crée un mystère avec des indices subtils, des suspects avec des mobiles crédibles, des alibis à vérifier et des fausses pistes. L'atmosphère doit être mystérieuse et tendue. Le joueur doit pouvoir interroger des suspects, fouiller des lieux, analyser des indices. Maintiens la cohérence : les indices doivent mener logiquement au coupable. Révèle progressivement les informations.
   IMPORTANT : Tu DOIS répondre UNIQUEMENT avec un objet JSON valide, sans texte avant ou après. Format obligatoire :
@@ -143,6 +145,7 @@ scenario2 = Scenario.create!(
 
 scenario3 = Scenario.create!(
   name: "Odyssée Stellaire",
+  category: "SF",
   description: "An 2847. Aux commandes du vaisseau Odysseus, explorez la galaxie, négociez avec des civilisations alien, gérez vos ressources et survivez aux dangers du vide spatial.",
   prompt: "Tu es le maître du jeu pour une aventure de science-fiction spatiale. Le joueur est capitaine d'un vaisseau d'exploration. Crée des situations variées : exploration de planètes inconnues, diplomatie avec des races aliens aux cultures étranges, combats spatiaux tactiques, gestion de ressources (carburant, vivres, munitions). Le ton est réaliste avec une touche d'émerveillement. Utilise des concepts scientifiques crédibles. Les choix du joueur doivent avoir des conséquences à long terme.
   IMPORTANT : Tu DOIS répondre UNIQUEMENT avec un objet JSON valide, sans texte avant ou après. Format obligatoire :
